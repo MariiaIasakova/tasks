@@ -1,0 +1,7 @@
+C:\Users\user\Desktop\repos\tasks\FirstExesice\Task5\bin\Debug\Task5.exe.config
+C:\Users\user\Desktop\repos\tasks\FirstExesice\Task5\bin\Debug\Task5.exe
+C:\Users\user\Desktop\repos\tasks\FirstExesice\Task5\bin\Debug\Task5.pdb
+C:\Users\user\Desktop\repos\tasks\FirstExesice\Task5\obj\Debug\Task5.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\FirstExesice\Task5\obj\Debug\Task5.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\FirstExesice\Task5\obj\Debug\Task5.exe
+C:\Users\user\Desktop\repos\tasks\FirstExesice\Task5\obj\Debug\Task5.pdb
