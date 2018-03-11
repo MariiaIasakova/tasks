@@ -1,0 +1,7 @@
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task6\bin\Debug\Task6.exe.config
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task6\bin\Debug\Task6.exe
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task6\bin\Debug\Task6.pdb
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task6\obj\Debug\Task6.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task6\obj\Debug\Task6.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task6\obj\Debug\Task6.exe
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task6\obj\Debug\Task6.pdb

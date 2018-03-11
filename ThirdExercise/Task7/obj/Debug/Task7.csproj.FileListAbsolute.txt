@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task7\bin\Debug\Task7.exe.config
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task7\bin\Debug\Task7.exe
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task7\bin\Debug\Task7.pdb
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task7\obj\Debug\Task7.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task7\obj\Debug\Task7.exe
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task7\obj\Debug\Task7.pdb

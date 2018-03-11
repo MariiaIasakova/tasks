@@ -1,0 +1,7 @@
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task4\bin\Debug\Task4.exe.config
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task4\bin\Debug\Task4.exe
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task4\bin\Debug\Task4.pdb
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task4\obj\Debug\Task4.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task4\obj\Debug\Task4.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task4\obj\Debug\Task4.exe
+C:\Users\user\Desktop\repos\tasks\ThirdExercise\Task4\obj\Debug\Task4.pdb
