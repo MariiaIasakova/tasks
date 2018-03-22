@@ -24,8 +24,8 @@ namespace Task2
 
         public bool MoveNext()
         {
-            currentIndex = currentIndex < series.Length - 1 ? currentIndex + 1 : 0;
-            return true;
+            currentIndex++;
+            return currentIndex < series.Length - 1;
         }
 
         public void Reset()
@@ -42,7 +42,7 @@ namespace Task2
                 }
                 else
                 {
-                    return 0;
+                    throw new IndexOutOfRangeException ("index more than last")
                 }
             }
 		}

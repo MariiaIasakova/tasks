@@ -1,27 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Task2
 {
-    public interface IIndexable
-    {
-        double this[int index] { get; }
-    }
-
-    public interface ISeries
-    {
-        double GetCurrent();
-        bool MoveNext();
-        void Reset();
-    }
-
-    interface IIndexableSeries : ISeries, IIndexable
-    {
-    }
-
     class Program
     {
 
@@ -34,6 +15,8 @@ namespace Task2
             IIndexableSeries list = new List(new double[] { 5, 8, 6, 3, 1 });
             Console.WriteLine("List:");
             PrintSeries(list);
+
+            Console.ReadKey();
         }
 
         private static void PrintSeries(IIndexableSeries progression)

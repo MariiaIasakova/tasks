@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FigureLibrary;
 
 namespace Task3
@@ -54,6 +50,7 @@ namespace Task3
             for (int i = 0; i < figureArray.Length; i++)
             {
                 figureArray[i].Draw(console);
+                Console.WriteLine();
             }
             Console.ReadKey();
         }
