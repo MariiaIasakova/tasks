@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task1
 {
-    class DynamicArray : IDynamicArray
+    class DynamicArray<T>
     {
-        private Object[] objectArray;
+        private T[] objectArray;
         private int size, capacity;
         private const int MaxArrayLength = 0X7FEFFFFF;
 
         public DynamicArray()
         {
-            objectArray = new Object[8];
+            objectArray = new T[8];
             Capacity = 8;
         }
 
@@ -26,34 +24,53 @@ namespace Task1
             }
             else if (capacity == 0)
             {
-                objectArray = EmptyArray<Object>.Value;
+                objectArray = new T[0];
             }
             else
             {
-                objectArray = new Object[capacity];
+                objectArray = new T[capacity];
                 Capacity = capacity;
             }
         }
 
-        public DynamicArray(object[] obj)
+        public DynamicArray(T[] obj)
         {
             if (obj == null)
             {
-                throw new ArgumentNullException("object[]", "Argument cannot be empty"));
+                throw new ArgumentNullException("object[]", "Argument cannot be empty");
             }
             int count = obj.Length;
             if (count == 0)
             {
-                objectArray = EmptyArray<Object>.Value;
+                objectArray = new T[0];
             }
             else
             {
-                objectArray = new Object[count];
+                objectArray = new T[count];
                 AddRange(obj);
             }
         }
 
-        public object this[int index]
+        public DynamicArray(IEnumerable<T> coll)
+        {
+            int count = coll.Count();
+            if (count == 0)
+            {
+                objectArray = new T[0];
+            }
+            else
+            {
+                int i = 0;
+                objectArray = new T[count];
+                foreach (T item in coll)
+                {
+                    objectArray[i] = item;
+                    i++;
+                }
+            }
+        }
+
+        public T this[int index]
         {
             get
             {
@@ -71,6 +88,7 @@ namespace Task1
 
         public int Capacity
         {
+            get => objectArray.Length;
             set
             {
                 if (value < size)
@@ -81,7 +99,7 @@ namespace Task1
                 {
                     if (value > 0)
                     {
-                        Object[] newItems = new Object[value];
+                        T[] newItems = new T[value];
                         if (size > 0)
                         {
                             Array.Copy(objectArray, 0, newItems, 0, size);
@@ -90,13 +108,13 @@ namespace Task1
                     }
                     else
                     {
-                        objectArray = EmptyArray<Object>.Value;
+                        objectArray = new T[0];
                     }
                 }
             }
         }
 
-        public void Add(object value)
+        public void Add(T value)
         {
             if (size == objectArray.Length)
             {
@@ -106,16 +124,16 @@ namespace Task1
             size++;
         }
 
-        public void AddRange(Object[] value)
+        public void AddRange(T[] value)
         {
             InsertRange(size, value);
         }
 
-        private void InsertRange(int index, Object[] value)
+        private void InsertRange(int index, T[] value)
         {
             if (value == null)
             {
-                throw new ArgumentNullException("object[]", "Argument cannot be null"));
+                throw new ArgumentNullException("object[]", "Argument cannot be null");
             }
             TestLength(index);
             int count = value.Length;
@@ -124,7 +142,7 @@ namespace Task1
             {
                 Array.Copy(objectArray, index, objectArray, index + count, size - index);
             }
-            Object[] itemsToInsert = new Object[count];
+            T[] itemsToInsert = new T[count];
             value.CopyTo(itemsToInsert, 0);
             itemsToInsert.CopyTo(objectArray, index);
             size += count;
@@ -145,7 +163,7 @@ namespace Task1
             }
         }
 
-        public void Insert(int index, object value)
+        public void Insert(int index, T value)
         {
             TestLength(index);
             if (index < size)
@@ -156,7 +174,7 @@ namespace Task1
             size++;
         }
 
-        public bool Remove(object value)
+        public bool Remove(T value)
         {
             int index = Array.IndexOf((Array)objectArray, value, 0, size); ;
             if (index >= 0)
@@ -178,7 +196,7 @@ namespace Task1
             {
                 Array.Copy(objectArray, index + 1, objectArray, index, size - index);
             }
-            objectArray[size] = null;
+            objectArray[size] = default(T);
 
         }
 

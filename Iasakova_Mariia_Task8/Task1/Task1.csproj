@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF8BD668-4024-4D9A-838C-1E4486362AFB}</ProjectGuid>
+    <ProjectGuid>{373D5FC3-9C99-4BCD-A7E3-4B329BCB4467}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Task1</RootNamespace>
     <AssemblyName>Task1</AssemblyName>
@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DynamicArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
