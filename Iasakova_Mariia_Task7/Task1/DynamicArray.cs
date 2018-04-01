@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Task1
 {
-    class DynamicArray<T>
+    class DynamicArray<T> : IEnumerable<T> where T : new()
     {
         private T[] objectArray;
-        private int size, capacity;
+        private int size;
         private const int MaxArrayLength = 0X7FEFFFFF;
 
         public DynamicArray()
@@ -53,21 +54,12 @@ namespace Task1
 
         public DynamicArray(IEnumerable<T> coll)
         {
-            int count = coll.Count();
-            if (count == 0)
+            if (coll == null)
             {
-                objectArray = new T[0];
+                throw new ArgumentNullException("coll", "Collection cannot be null");
             }
-            else
-            {
-                int i = 0;
-                objectArray = new T[count];
-                foreach (T item in coll)
-                {
-                    objectArray[i] = item;
-                    i++;
-                }
-            }
+            objectArray = coll.ToArray();
+            size = objectArray.Length;
         }
 
         public T this[int index]
@@ -156,10 +148,10 @@ namespace Task1
 
                 if ((uint)newCapacity > MaxArrayLength)
                 {
-                    capacity = MaxArrayLength;
+                    Capacity = MaxArrayLength;
                 }
                 if (newCapacity < min) newCapacity = min;
-                capacity = newCapacity;
+                Capacity = newCapacity;
             }
         }
 
@@ -207,6 +199,22 @@ namespace Task1
                 throw new ArgumentOutOfRangeException("index", "Argument out of range");
             }
 
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            for (int i = 0; i < size; i++)
+            {
+                yield return objectArray[i];
+            }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < size; i++)
+            {
+                yield return objectArray[i];
+            }
         }
     }
 }

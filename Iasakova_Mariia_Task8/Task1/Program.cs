@@ -30,15 +30,15 @@ namespace Task1
             }
         }
 
-        public static void RemoveEachSecondItem(ICollection<int> list)
+        public static void RemoveEachSecondItem<T>(ICollection<T> list)
         {
             bool delete = false;
-            int prom = 2;
+            int prom = 0;
             int iter = 0;
             while (list.Count > 1)
             {
                 int j = 0;
-                List<int> arr = new List<int>();
+                List<T> arr = new List<T>();
                 if (iter != 0)
                 {
                     if (prom % 2 == 0)
@@ -66,46 +66,32 @@ namespace Task1
                 }
                 else
                 {
-                    if (prom % 2 == 0)
+                    for (int i = 0; i < list.Count; i++)
                     {
-                        for (int i = 0; i < list.Count; i++)
+                        if (i % 2 != 0)
                         {
-                            if (i % 2 != 0)
-                            {
-                                arr.Add(list.ElementAt(i));
-                                j++;
-                            }
+                            arr.Add(list.ElementAt(i));
+                            j++;
                         }
+                    }
+                }
+                prom = j - 1;
+                j = 0;
+                for (int i = 0; i < list.Count;)
+                {
+                    if (delete)
+                    {
+                        list.Remove(arr[j]);
+                        j++;
                     }
                     else
                     {
-                        for (int i = 0; i < list.Count; i++)
-                        {
-                            if (i % 2 == 0)
-                            {
-                                arr.Add(list.ElementAt(i));
-                                j++;
-                            }
-                        }
+                        i++;
                     }
+                    delete = !delete;
                 }
-                    prom = arr[j - 1];
-                    j = 0;
-                    for (int i = 0; i < list.Count;)
-                    {
-                        if (delete)
-                        {
-                            list.Remove(arr[j]);
-                            j++;
-                        }
-                        else
-                        {
-                            i++;
-                        }
-                        delete = !delete;
-                    }
                 iter++;
-                }
             }
         }
     }
+}
