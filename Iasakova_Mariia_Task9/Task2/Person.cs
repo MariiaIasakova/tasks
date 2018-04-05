@@ -4,6 +4,11 @@ namespace Task2
 {
     public class Person
     {
+        public delegate void ComeInTheOffice(Person person, DateTime time);
+        public delegate void LeaveTheOffice(Person person);
+        public event ComeInTheOffice ComeInOffice;
+        public event LeaveTheOffice LeaveOffice;
+
         string name;
 
         public string Name
@@ -52,6 +57,14 @@ namespace Task2
             Console.WriteLine("До свидания, {0}! - сказал {1}.", _name.Name, name);
         }
 
-        
+        public void ComingInOffice(DateTime time)
+        {
+            ComeInOffice(this, time);
+        }
+
+        public void LeavingOffice()
+        {
+            LeaveOffice(this);
+        }
     }
 }

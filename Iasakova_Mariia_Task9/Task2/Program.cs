@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2
 {
@@ -10,46 +6,56 @@ namespace Task2
     {
         static void Main(string[] args)
         {
+            Office office = new Office();
             Person John = new Person()
             {
                 Name = "Джон"
             };
+            John.ComeInOffice += office.SomebodyCome;
+            John.LeaveOffice += office.SomebodyLeave;
+
             Person Bill = new Person()
             {
                 Name = "Билл"
             };
+            Bill.ComeInOffice += office.SomebodyCome;
+            Bill.LeaveOffice += office.SomebodyLeave;
+
             Person Hugo = new Person()
             {
                 Name = "Хьюго"
             };
+            Hugo.ComeInOffice += office.SomebodyCome;
+            Hugo.LeaveOffice += office.SomebodyLeave;
 
-            Office office = new Office();
-            office.SomebodyCome(John, DateTime.Now);
-            office.OnCome += John.Greeting;
-            Console.WriteLine();
+            ComeInOffice(John, office);
 
-            office.SomebodyCome(Bill, DateTime.Now);
-            office.OnCome += Bill.Greeting;
-            office.OnLeave += Bill.Farewell;
-            Console.WriteLine();
+            ComeInOffice(Bill, office);
 
-            office.SomebodyCome(Hugo, DateTime.Now);
-            office.OnCome += Hugo.Greeting;
-            office.OnLeave += Hugo.Farewell;
-            Console.WriteLine();
+            ComeInOffice(Hugo, office);
 
-            office.OnLeave -= John.Farewell;
-            office.SomebodyLeave(John);
-            Console.WriteLine();
+            LeaveOffice(John, office);
 
-            office.OnLeave -= Bill.Farewell;
-            office.SomebodyLeave(Bill);
-            Console.WriteLine();
+            LeaveOffice(Bill, office);
 
-            office.OnLeave -= Hugo.Farewell;
-            office.SomebodyLeave(Hugo);
+            LeaveOffice(Hugo, office);
 
             Console.ReadKey();
+        }
+        public static void ComeInOffice(Person person, Office office)
+        {
+            person.ComingInOffice(DateTime.Now);
+            office.OnCome += person.Greeting;
+            office.OnLeave += person.Farewell;
+            Console.WriteLine();
+        }
+
+        public static void LeaveOffice(Person person, Office office)
+        {
+            office.OnLeave -= person.Farewell;
+            office.OnCome -= person.Greeting;
+            person.LeavingOffice();
+            Console.WriteLine();
         }
     }
 }

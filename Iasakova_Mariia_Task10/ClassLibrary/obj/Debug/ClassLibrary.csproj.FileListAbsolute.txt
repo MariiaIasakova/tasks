@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task10\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task10\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task10\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task10\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task10\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task10\ClassLibrary\obj\Debug\ClassLibrary.pdb

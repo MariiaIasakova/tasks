@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Sort\bin\Debug\Sort.dll
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Sort\bin\Debug\Sort.pdb
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.dll
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.pdb
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Sort\bin\Debug\Sort.dll
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Sort\bin\Debug\Sort.pdb
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.dll
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Sort\obj\Debug\Sort.pdb

@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\TestValues\bin\Release\TestValues.dll
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\TestValues\bin\Release\TestValues.pdb
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\TestValues\obj\Release\TestValues.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\TestValues\obj\Release\TestValues.dll
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\TestValues\obj\Release\TestValues.pdb
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\TestValues\obj\Release\TestValues.csprojResolveAssemblyReference.cache

@@ -1,13 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2
 {
+    class PersonEventArgs : EventArgs
+    {
+        public DateTime Time { get; set; }
+
+
+
+        public PersonEventArgs(DateTime time)
+        {
+            Time = time;
+        }
+    }
     class Office
     {
+        //public delegate void GreetingOffice2(Person name, PersonEventArgs args);
         public delegate void GreetingOffice(Person name, DateTime time);
         public delegate void FarewellOffice(Person name);
         public event GreetingOffice OnCome;
@@ -20,6 +28,7 @@ namespace Task2
             if (peopleInOffice > 0)
             {
                 OnCome(name, time);
+                //OnCome2(name, new PersonEventArgs(DateTime.Now));
             }
             peopleInOffice++;
         }

@@ -1,0 +1,2 @@
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\Task1\obj\Release\Task1.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\Task1\obj\Release\Task1.csproj.CoreCompileInputs.cache

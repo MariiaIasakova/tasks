@@ -1,0 +1,7 @@
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task8\Task3\bin\Debug\Task3.exe.config
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task8\Task3\bin\Debug\Task3.exe
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task8\Task3\bin\Debug\Task3.pdb
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task8\Task3\obj\Debug\Task3.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task8\Task3\obj\Debug\Task3.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task8\Task3\obj\Debug\Task3.exe
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task8\Task3\obj\Debug\Task3.pdb

@@ -10,13 +10,15 @@ namespace Sort
 
         public void StartThreads(SortArray sortArray, int number)
         {
-            Thread t = new Thread(x => sortArray.SortArr());
-            t.Start();
-            t.Join();
-            if (!t.IsAlive)
+            Thread t = new Thread(x =>
             {
-                OnEndSort(number);
-            }
+                sortArray.SortArr();
+                if (OnEndSort != null)
+                {
+                    OnEndSort(number);
+                }
+            });
+            t.Start();
         }
     }
 }

@@ -1,0 +1,14 @@
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Task2\bin\Debug\Task2.exe.config
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Task2\bin\Debug\Task2.exe
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Task2\bin\Debug\Task2.pdb
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.exe
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.pdb
+C:\Users\user\Desktop\repos\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Task2\bin\Debug\Task2.exe.config
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Task2\bin\Debug\Task2.exe
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Task2\bin\Debug\Task2.pdb
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.exe
+C:\Users\user\Desktop\repos\tasks\Iasakova_Mariia_Task9\Task2\obj\Debug\Task2.pdb

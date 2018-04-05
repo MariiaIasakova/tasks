@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Sort
 {
@@ -23,18 +19,13 @@ namespace Sort
         public void SortArr()
         {
             CompareValue compare = new CompareValue(CompareAscByAlfabet);
-            if (a == "a")
+            if (a != "a" && a != "d")
             {
-                arr = arr.OrderBy(item => item.Length).ToArray();
+                throw new ArgumentException("the value may be only a or d");
             }
             else if (a == "d")
             {
-                arr = arr.OrderByDescending(item => item.Length).ToArray();
                 compare = new CompareValue(CompareDscByAlfabet);
-            }
-            else
-            {
-                throw new ArgumentException("the value may be only a or d");
             }
             for (int i = 0; i < arr.Length; i++)
             {
@@ -48,48 +39,39 @@ namespace Sort
                     }
                 }
             }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
         }
 
         static bool CompareAscByAlfabet(string s1, string s2)
         {
-            if (s1.Length == s2.Length)
+            if (s1.Length != s2.Length)
             {
-                for (int i = 0; i < s1.Length; i++)
-                {
-                    if (s1[i] < s2[i])
-                    {
-                        return false;
-                    }
-                    if (s1[i] > s2[i])
-                    {
-                        return true;
-                    }
-                }
+                return (s1.Length > s2.Length);
             }
-            return false;
+            else
+            {
+                return (string.Compare(s1, s2) > 0);
+            }
         }
 
         static bool CompareDscByAlfabet(string s1, string s2)
         {
-            if (s1.Length == s2.Length)
+            if (s1.Length != s2.Length)
             {
-                for (int i = 0; i < s1.Length; i++)
-                {
-                    if (s1.ToCharArray()[i] < s2.ToCharArray()[i])
-                    {
-                        return true;
-                    }
-                    if (s1.ToCharArray()[i] > s2.ToCharArray()[i])
-                    {
-                        return false;
-                    }
-                }
+                return (s1.Length < s2.Length);
             }
-            return false;
+            else
+            {
+                return (string.Compare(s1, s2) < 0);
+            }
         }
         public void EndSort(int number)
         {
             Console.WriteLine("The end of sort thread {0}", number);
+
         }
     }
 }

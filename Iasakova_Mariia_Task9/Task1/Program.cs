@@ -16,9 +16,10 @@ namespace Task1
 
             StartThread t1 = new StartThread();
             t1.OnEndSort += sortArray1.EndSort;
-            t1.StartThreads(sortArray1, 1);
             StartThread t2 = new StartThread();
             t2.OnEndSort += sortArray2.EndSort;
+
+            t1.StartThreads(sortArray1, 1);
             t2.StartThreads(sortArray2, 2);
             Console.ReadKey();
         }

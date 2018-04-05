@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\FigureLibrary\bin\Debug\FigureLibrary.dll
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\FigureLibrary\bin\Debug\FigureLibrary.pdb
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\FigureLibrary\obj\Debug\FigureLibrary.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\FigureLibrary\obj\Debug\FigureLibrary.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\FigureLibrary\obj\Debug\FigureLibrary.dll
+C:\Users\user\Desktop\repos\tasks\SixthExcercise\FigureLibrary\obj\Debug\FigureLibrary.pdb
