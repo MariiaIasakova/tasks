@@ -42,7 +42,7 @@ namespace Task2
                 return false;
             }
 
-            return (experience == other.experience) && (position == other.position);
+            return base.Equals(other) && (experience == other.experience) && (position == other.position);
         }
 
         //public static bool operator ==(Employee a, Employee b)
