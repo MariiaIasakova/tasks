@@ -10,21 +10,26 @@ namespace Task2
     public class Observation
     {
         static string path, pathObservation;
+        static int countForm;
 
-        FileSystemWatcher watcher = new FileSystemWatcher(path)
-        {
-            NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
-                | NotifyFilters.FileName | NotifyFilters.DirectoryName
-        };
+        FileSystemWatcher watcher;
 
-        public Observation(string _mainPath, string _path, int i)
+        public Observation(string _mainPath, string _path)
         {
             PathDirectory = _path;
+
+            watcher = new FileSystemWatcher(path)
+            {
+                NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
+                | NotifyFilters.FileName | NotifyFilters.DirectoryName
+            };
+
+            watcher.IncludeSubdirectories = true;
             watcher.Changed += new FileSystemEventHandler(OnChanged);
             watcher.Created += new FileSystemEventHandler(OnChanged);
             watcher.Deleted += new FileSystemEventHandler(OnChanged);
-            pathObservation = Directory.CreateDirectory(Path.Combine(_mainPath, $"observation{i}")).ToString();
-
+            pathObservation = _mainPath;
+            countForm++;
         }
 
         public string PathDirectory
@@ -32,7 +37,7 @@ namespace Task2
             get => path;
             set
             {
-                if (String.IsNullOrEmpty(value))
+                if (!String.IsNullOrEmpty(value))
                 {
                     path = value;
                 }
@@ -42,46 +47,45 @@ namespace Task2
         #region FunctionsForWork
         public void StartObservation()
         {
+            countForm = TestForm();
+            pathObservation = Path.Combine(pathObservation, $"observation{countForm}");
+            Directory.CreateDirectory(pathObservation);
+            var newPath1 = Path.Combine(pathObservation, DateTime.Now.ToString("yyyyMMddHH_mm_ss"));
+            Directory.CreateDirectory(newPath1);
+            CopyDirectoriesAndFiles(newPath1, path);
             watcher.EnableRaisingEvents = true;
         }
 
         private static void OnChanged(object source, FileSystemEventArgs e)
         {
-            if (!Directory.Exists(path))
+            if (Directory.Exists(path))
             {
-                DateTime dateTimeNow = DateTime.Now;
-                var newPath = Directory.CreateDirectory(Path.Combine(pathObservation, dateTimeNow.ToString())).ToString();
-                CopyDirectoriesAndFiles(dateTimeNowб newPath);
+                var newPath = Path.Combine(pathObservation, DateTime.Now.ToString("yyyyMMddHH_mm_ss"));
+                Directory.CreateDirectory(newPath);
+                CopyDirectoriesAndFiles(newPath, path);
             }
         }
 
-        public List<DateTime> WriteCopies()
+        public List<string> WriteCopies()
         {
-            List<DateTime> dateTimes = new List<DateTime>();
-            foreach (var file in Directory.EnumerateDirectories(pathObservation))
+            List<string> dateTimes = new List<string>();
+            foreach (var dir in Directory.EnumerateDirectories(pathObservation))
             {
-                dateTimes.Add(Directory.GetCreationTime(file));
+                dateTimes.Add(new DirectoryInfo(dir).Name.ToString());
             }
             return dateTimes;
         }
 
-        public void RollbackChanges(DateTime dateTimeOfChange)
+        public void RollbackChanges(string dateTimeOfChange)
         {
-            Directory.Delete(path);
-            CopyDirectoriesAndFiles(path, );
+            DeleteDirectoriesAndFiles(path);
+            var newPath = Path.Combine(pathObservation, dateTimeOfChange);
+            CopyDirectoriesAndFiles(path, newPath);
         }
 
-        public void EndObservation(string value)
+        public void EndObservation()
         {
             watcher.EnableRaisingEvents = false;
-            if (value != "Y" | value != "N")
-            {
-                throw new Exception("Entered the wrong value");
-            }
-            else if (value == "Y")
-            {
-                Directory.Delete(pathObservation);
-            }
         }
         #endregion
 
@@ -98,22 +102,51 @@ namespace Task2
             {
                 foreach (var item in directories)
                 {
-                    var newPathInDir = Directory.CreateDirectory(Path.Combine(newPath, Path.GetDirectoryName(item))).ToString();
-                    string[] filesInDir = Directory.GetFiles(item);
-                    if (files.Length != 0)
-                    {
-                        CopyFiles(filesInDir, newPathInDir);
-                    }
+                    var newPathInDir = Path.Combine(newPath, new DirectoryInfo(item).Name.ToString());
+                    Directory.CreateDirectory(newPathInDir);
+                    CopyDirectoriesAndFiles(newPathInDir, item);
                 }
             }
         }
 
-        static void CopyFiles(string[] files, string path)
+        static void CopyFiles(string[] files, string pathObject)
         {
             foreach (var item in files)
             {
-                File.Copy(item, path, true);
+                var newPath = Path.Combine(pathObject, new FileInfo(item).Name.ToString());
+                File.Copy(item, newPath, true);
             }
+        }
+
+        static void DeleteDirectoriesAndFiles(string pathObject)
+        {
+            string[] files = Directory.GetFiles(pathObject);
+            if (files.Length != 0)
+            {
+                foreach (var item in files)
+                {
+                    File.Delete(item);
+                }
+            }
+            string[] directories = Directory.GetDirectories(pathObject);
+            if (directories.Length != 0)
+            {
+                foreach (var item in directories)
+                {
+                    Directory.Delete(item, true);
+                }
+            }
+        }
+
+        static int TestForm()
+        {
+            var newPath = Path.Combine(pathObservation, $"observation{countForm}");
+            if (Directory.Exists(newPath))
+            {
+                countForm++;
+                TestForm();
+            }
+            return countForm;
         }
         #endregion
     }
