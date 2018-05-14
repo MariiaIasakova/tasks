@@ -161,13 +161,13 @@ namespace FitnessCenter.DAL.DataLayer
 
         public void UpdateUser(User user)
         {
-            var subscriptionsIds = user.Subscriptions.Select(r => r.SubscriptionId).ToList();
+            var subscriptionsIds = user.Subscriptions.Select(s => s.SubscriptionId).ToList();
             var list = new List<int>();
             DataTable data = new DataTable();
             data.Columns.Add("id", typeof(int));
-            foreach (var r in subscriptionsIds)
+            foreach (var item in subscriptionsIds)
             {
-                data.Rows.Add(r);
+                data.Rows.Add(item);
             }
             using (var connection = new SqlConnection(connectionString))
             {
@@ -265,9 +265,9 @@ namespace FitnessCenter.DAL.DataLayer
             }
         }
 
-        public Subscription GetSubscriptionById(int subscriptionId)
+        public List<Subscription> GetSubscriptionById(int subscriptionId)
         {
-            var subscription = new Subscription();
+            var subscriptions = new List<Subscription>();
             using (var connection = new SqlConnection(connectionString))
             {
                 var command = new SqlCommand
@@ -283,16 +283,20 @@ namespace FitnessCenter.DAL.DataLayer
                 {
                     while (reader.Read())
                     {
-                        var ID = reader.GetInt32(0);
+                        var _subscriptionId = reader.GetInt32(0);
                         var nameService = reader.GetString(1);
                         var description = reader.GetString(2);
-                        subscription.SubscriptionId = subscriptionId;
-                        subscription.NameService = nameService;
-                        subscription.Description = description;
+                        var subscription = new Subscription()
+                        {
+                            SubscriptionId = _subscriptionId,
+                            NameService = nameService,
+                            Description = description
+                        };
+                        subscriptions.Add(subscription);
                     }
                 }
             }
-            return subscription;
+            return subscriptions;
         }
 
         public void UpdateSubscription(Subscription subscription)

@@ -69,9 +69,9 @@ namespace FitnessCenter.DAL.DataLayer
             return subscriptions;
         }
 
-        public Subscription GetSubscriptionById(int subscriptionId)
+        public List<Subscription> GetSubscriptionById(int subscriptionId)
         {
-            return subscriptions.Find(s => s.SubscriptionId == subscriptionId);
+            return subscriptions.FindAll(s => s.SubscriptionId == subscriptionId);
         }
 
         public User GetUserById(int userId)

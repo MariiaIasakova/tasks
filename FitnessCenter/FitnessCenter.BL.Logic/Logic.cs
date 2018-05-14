@@ -39,7 +39,7 @@ namespace FitnessCenter.BL.Logic
             return data.GetSubscription();
         }
 
-        public Subscription GetSubscriptionById(int subscriptionId)
+        public List<Subscription> GetSubscriptionById(int subscriptionId)
         {
             return data.GetSubscriptionById(subscriptionId);
         }

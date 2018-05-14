@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessCenter.BL.Logic", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessCenter.DAL.DataLayer", "FitnessCenter.DAL.DataLayer\FitnessCenter.DAL.DataLayer.csproj", "{CAFF9978-E2D5-4B51-A91A-EC6622F02102}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessCenter.PL.Web", "FitnessCenter.PL.Web\FitnessCenter.PL.Web.csproj", "{2EAFA3F2-DCD2-4D9D-ABCE-04D111EBED7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CAFF9978-E2D5-4B51-A91A-EC6622F02102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAFF9978-E2D5-4B51-A91A-EC6622F02102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAFF9978-E2D5-4B51-A91A-EC6622F02102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EAFA3F2-DCD2-4D9D-ABCE-04D111EBED7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAFA3F2-DCD2-4D9D-ABCE-04D111EBED7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAFA3F2-DCD2-4D9D-ABCE-04D111EBED7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAFA3F2-DCD2-4D9D-ABCE-04D111EBED7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

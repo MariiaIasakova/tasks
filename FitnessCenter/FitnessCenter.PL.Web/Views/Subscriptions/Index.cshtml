@@ -1,0 +1,47 @@
+﻿@using FitnessCenter.Shared;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    table th a {
+        text-decoration: none;
+        color: black;
+    }
+
+        table th a:hover {
+            text-decoration: none;
+            color: black;
+        }
+</style>
+
+<h2>Index</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name of service</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subscription in Model)
+        {
+            <tr>
+                <td>@subscription.NameService</td>
+                <td>@subscription.Description</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { SubscriptionId = subscription.SubscriptionId })
+                    @Html.ActionLink("Delete", "Delete", new { SubscriptionId = subscription.SubscriptionId })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

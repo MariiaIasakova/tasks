@@ -27,7 +27,7 @@ namespace FitnessCenter.Shared
 
         List<Subscription> GetSubscription();
 
-        Subscription GetSubscriptionById(int subscriptionId);
+        List<Subscription> GetSubscriptionById(int subscriptionId);
 
         void AddSubscription(Subscription subscription);
 
